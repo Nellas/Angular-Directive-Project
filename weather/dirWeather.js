@@ -1,7 +1,7 @@
 var app = angular.module('directivePractice').directive('nglWeather', function() {
 
     return {
-        templateUrl: 'app/weather/dirWeather.html',
+        templateUrl: 'weather/dirWeather.html',
         scope: {
             currentUser: '=',
             weatherCall: '&'
