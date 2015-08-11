@@ -7,6 +7,11 @@ var app = angular.module('directivePractice', ['ngRoute']).config(function($rout
         controller: 'homeCtrl'
     })
 
+    .when('/weather', {
+            templateUrl: 'app/weather/dirWeather.html',
+            controller: 'homeCtrl'
+        })
+
     .otherwise({
         redirectTo: 'home/homeTemplate.html'
     })

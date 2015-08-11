@@ -1,4 +1,4 @@
-var app = angular.module('directivePractice').controller('homeCtrl', function($scope) {
+var app = angular.module('directivePractice').controller('homeCtrl', function($scope, weatherService) {
 
     $scope.users = [
         {
@@ -35,4 +35,13 @@ var app = angular.module('directivePractice').controller('homeCtrl', function($s
 
     $scope.showMe = false;
 
+    $scope.getWeather = function() {
+        weatherService.getWeather()
+            .then(function(data) {
+                console.log('this is from the controller', data);
+            });
+    };
+
+
 });
+

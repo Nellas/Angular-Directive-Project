@@ -5,6 +5,7 @@ var app = angular.module('directivePractice').directive('nglDisplay', function()
         link: function(scope, element, attr) {
             element.on('click', function() {
                 scope.showMe = true;
+                console.log(attr);
                 scope.$apply();
             })
         }
