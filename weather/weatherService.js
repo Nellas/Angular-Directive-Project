@@ -9,8 +9,8 @@ var app = angular.module('directivePractice').service('weatherService', function
             .then(function(res) {
                 console.log(res);
                 var finishedData = {
-                    Description: res.data.weather[0].description,
-                    Temp: res.data.main.temp
+                    description: res.data.weather[0].description,
+                    temp: res.data.main.temp
                 };
                 dfd.resolve(finishedData);
                 console.log(finishedData);

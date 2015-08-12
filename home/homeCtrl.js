@@ -36,12 +36,11 @@ var app = angular.module('directivePractice').controller('homeCtrl', function($s
     $scope.showMe = false;
 
     $scope.getWeather = function() {
-        weatherService.getWeather()
-            .then(function(data) {
-                console.log('this is from the controller', data);
-            });
+        return weatherService.getWeather();
     };
 
-
+    $scope.changeUser = function(user) {
+      return $scope.newUser = user;
+    }
 });
 
