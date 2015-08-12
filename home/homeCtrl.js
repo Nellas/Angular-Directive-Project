@@ -35,12 +35,14 @@ var app = angular.module('directivePractice').controller('homeCtrl', function($s
 
     $scope.showMe = false;
 
+    $scope.currentUser = $scope.users[0];
+
     $scope.getWeather = function() {
         return weatherService.getWeather();
     };
 
-    $scope.changeUser = function(user) {
-      return $scope.newUser = user;
+    $scope.setUser = function(user) {
+      $scope.currentUser = user;
     }
 });
 

@@ -1,4 +1,6 @@
 <div>
-    <ngl-weather current-user="users[1]" weather-call="getWeather(city)"> </ngl-weather>
-    <ngl-display ng-repeat="user in users" test="myTest" my-check="checkItOut"> </ngl-display>
+    <ngl-weather current-user="currentUser" weather-call="getWeather(city)"> </ngl-weather>
+</div>
+<div>
+    <ngl-display style="margin-top: 100px;" ng-repeat="user in users" user="user" set-user="setUser(user)"> </ngl-display>
 </div>

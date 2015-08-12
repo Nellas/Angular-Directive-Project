@@ -7,10 +7,13 @@ var app = angular.module('directivePractice').service('weatherService', function
             url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city
         })
             .then(function(res) {
-                console.log(res);
+                function tempConvert() {
+                    return Math.floor((res.data.main.temp * 9/5) - 459.67);
+                }
+
                 var finishedData = {
                     description: res.data.weather[0].description,
-                    temp: res.data.main.temp
+                    temp: tempConvert()
                 };
                 dfd.resolve(finishedData);
                 console.log(finishedData);

@@ -8,7 +8,7 @@ var app = angular.module('directivePractice').directive('nglWeather', function()
         },
 
         link: function (scope, elem, attrs) {
-            console.log(scope.currentUser);
+            console.log('current user:', scope.currentUser);
 
         },
 
