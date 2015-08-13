@@ -7,17 +7,19 @@ var app = angular.module('directivePractice').directive('nglWeather', function()
             weatherCall: '&'
         },
 
-        link: function (scope, elem, attrs) {
-            console.log('current user:', scope.currentUser);
-
-        },
-
         controller: function ($scope) {
-            $scope.weatherCall({city: $scope.currentUser.city})
+            $scope.$watch(function(){
+                return $scope.currentUser
+            }, $scope.weatherCall({city: $scope.currentUser.city})
                 .then(function(data) {
                     $scope.userWeather = data.description;
                     $scope.userTemp = data.temp;
-                })
+            }))
         }
     }
 });
+
+//$scope.weatherCall({city: $scope.currentUser.city})
+//    .then(function(data) {
+//        $scope.userWeather = data.description;
+//        $scope.userTemp = data.temp;
